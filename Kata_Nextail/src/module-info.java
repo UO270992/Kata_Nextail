@@ -1,0 +1,2 @@
+module kata_Nextail {
+}
