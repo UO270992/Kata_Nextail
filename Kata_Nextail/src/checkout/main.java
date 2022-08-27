@@ -23,14 +23,25 @@ public class main {
 		pricing_rules.put("VOUCHER", 5.00);
 		pricing_rules.put("TSHIRT", 20.00);
 		pricing_rules.put("PANTS", 7.50);
+		
 		List<String> my_products = new ArrayList<>();	//Create a list to store the products (initially null)
 		Checkout my_checkout = new Checkout (pricing_rules);	//Create the checkout object with the pricing rules
+		
+		//Infinite loop to scan products
 		String product = my_checkout.scan();
 		while(!product.equals("")) {
-			my_products.add(product);
-			product = my_checkout.scan();
+			if(pricing_rules.containsKey(product)) {
+				my_products.add(product);
+				product = my_checkout.scan();
+			}
+			else {
+				System.out.printf("That product does not exist in the system.\nThe available options are:\n");
+				for (String s: pricing_rules.keySet()) {
+					System.out.printf("\t%s\n",s.toString());
+				}
+				product = my_checkout.scan();
+			}
 		}
-		
 		
 		int count_voucher=0;
 		int count_tshirt=0;
