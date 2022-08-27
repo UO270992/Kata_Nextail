@@ -14,15 +14,16 @@ import java.util.Scanner;
 public class Checkout {
 	List<String> my_products;
 	Scanner my_scanner = new Scanner(System.in);
+	Hashtable<String, Double> my_prices;
 	
-	public Checkout (Hashtable<String, String> pricing_rules) {
-		
+	public Checkout (Hashtable<String, Double> pricing_rules) {
+		my_prices = pricing_rules;
 	}
 
-	public void scan() {
+	public String scan() {
 		System.out.print("Input next product: \n"); //Request user input
-		String p = my_scanner.nextLine();	//User input
-		my_products.add(p);
+		String s = my_scanner.nextLine();	//User input
+		return s;
 	
 	}
 	
