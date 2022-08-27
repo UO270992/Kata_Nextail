@@ -31,7 +31,7 @@ public class main {
 			product = my_checkout.scan();
 		}
 		
-		double total = 0.0;
+		
 		int count_voucher=0;
 		int count_tshirt=0;
 		int count_pants=0;
@@ -49,8 +49,9 @@ public class main {
 		if(count_tshirt >=3) {
 			price_tshirts--;
 		}
-		total = count_voucher%2*my_checkout.my_prices.get("VOUCHER") + count_tshirt*price_tshirts + count_pants*my_checkout.my_prices.get("PANTS");
-		System.out.printf("Items: " + my_products + " - Total: %f.2€", total);
+	
+		double total = (count_voucher+1)/2*my_checkout.my_prices.get("VOUCHER") + count_tshirt*price_tshirts + count_pants*my_checkout.my_prices.get("PANTS");
+		System.out.printf("Items: " + my_products + " - Total: %.2f€", total);
 		
 
 	}
