@@ -26,4 +26,42 @@ public class Checkout {
 		return s;
 	}
 	
+	//Methods to calculate the prices
+	public double total_voucher(int n_items, double price) {
+		return ((n_items+1)/2)*price;
+	}
+		
+	public double total_tshirt(int n_items, double price) {
+		if (n_items>=3) {
+			return n_items*(price-1);
+		}
+		return n_items*price;
+	}
+		
+	public double total_pants(int n_items, double price) {
+		return n_items*price;
+	}
+	
+	//Calculate the total amount in the list of products
+	public double total_value(List<String> my_products) {
+		
+		//Find out how many items of each type there are (required to apply discounts)
+		int count_voucher=0;
+		int count_tshirt=0;
+		int count_pants=0;
+		for (String p: my_products) {
+			switch(p) {
+				case "VOUCHER":
+					count_voucher++;
+					break;
+				case "TSHIRT":					
+					count_tshirt++;
+					break;
+				case "PANTS":
+					count_pants++;
+					break;
+				}
+		}
+		return total_tshirt(count_tshirt,my_prices.get("TSHIRT"))+total_pants(count_pants, my_prices.get("PANTS"))+total_voucher(count_voucher, my_prices.get("VOUCHER"));
+	}
 }
