@@ -1,5 +1,11 @@
+/** Backend exercise Nextail
+ * 
+ */
 package checkout;
-
+/**
+ * @author ChristianGm
+ *
+ */
 public class Product {
 	
 	String name;
@@ -10,6 +16,10 @@ public class Product {
 		this.name = name;
 		this.code = code;
 		this.Price = price;
+	}
+	
+	public double total() {
+		return 0.0;
 	}
 	
 }

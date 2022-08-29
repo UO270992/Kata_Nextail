@@ -1,4 +1,4 @@
-/**
+/** Backend exercise Nextail
  * 
  */
 package checkout;
@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  */
 public class Checkout {
-	List<String> my_products;
+	List<String> my_products; //At the moment this is not used. Not escalable at the moment.
 	Scanner my_scanner = new Scanner(System.in);
 	Hashtable<String, Double> my_prices;
 	
@@ -24,7 +24,6 @@ public class Checkout {
 		System.out.print("Input next product: \n"); //Request user input
 		String s = my_scanner.nextLine();	//User input
 		return s;
-	
 	}
 	
 }
