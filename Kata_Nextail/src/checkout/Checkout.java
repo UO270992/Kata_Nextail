@@ -43,14 +43,14 @@ public class Checkout {
 	}
 	
 	//Calculate the total amount in the list of products
-	public double total_value(List<String> my_products) {
+	public double total_value(List<Product> my_products) {
 		
 		//Find out how many items of each type there are (required to apply discounts)
 		int count_voucher=0;
 		int count_tshirt=0;
 		int count_pants=0;
-		for (String p: my_products) {
-			switch(p) {
+		for (Product p: my_products) {
+			switch(p.code) {
 				case "VOUCHER":
 					count_voucher++;
 					break;

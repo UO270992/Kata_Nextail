@@ -12,10 +12,9 @@ public class Product {
 	String code;
 	double Price;
 	
-	public Product (String name, String code, double price) {
+	public Product (String name, String code) {
 		this.name = name;
 		this.code = code;
-		this.Price = price;
 	}
 	
 	public double total() {
